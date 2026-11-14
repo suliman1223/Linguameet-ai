@@ -1,29 +1,38 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Landing = () => {
     return (
-        <div className='LandingPageContainer'>
+        <div className="LandingPageContainer">
             <nav>
-                <div className="navHeader"><h2>LinguameetAi</h2></div>
+                <div className="navHeader">
+                    <h2>LinguameetAi</h2>
+                </div>
+
                 <div className="navList">
-                    <p>Join as Guest</p>
-                    <p>Register</p>
-                    <div role="button">
-                        <p>Login</p>
-                    </div>
+                    <Link to="/guest">Join as Guest</Link>
+                    <Link to="/auth">Register</Link>
+                    <Link to="/auth">Login</Link>
                 </div>
             </nav>
+
             <div className="landingMainContainer">
                 <div>
-                    <h1><span style={{color:"#D97500"}}>Connect</span> to you loved one's</h1>
+                    <h1>
+                        <span style={{ color: "#D97500" }}>
+                            Connect
+                        </span>{" "}
+                        to your loved ones
+                    </h1>
+
                     <p>Cover the distance by LinguameetAi CrossX</p>
-                    <div role="button">
-                       <a href='/home'>Get Started</a>
-                    </div>
+
+                    <Link to="/auth">Get Started</Link>
                 </div>
+
                 <div>
-                    <img src="/mobile.png" alt="" />
+                    <img src="/mobile.png" alt="LinguaMeet AI" />
                 </div>
             </div>
         </div>

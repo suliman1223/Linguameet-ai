@@ -1,24 +1,21 @@
-import { useState } from 'react'
-import { Route, BrowserRouter as Router } from 'react-router-dom'
-import { Routes } from 'react-router-dom'
-import Home from './pages/landing'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-
-import './App.css'
+import Landing from './pages/landing.jsx';
+import Auth from './pages/auth.jsx';
+import { AuthProvider } from './contexts/AuthContexts.jsx';
 
 function App() {
-
-
   return (
-    <>
-     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-
-     </Router>
-    </>
-  )
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/auth" element={<Auth />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
